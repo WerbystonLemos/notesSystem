@@ -15,7 +15,9 @@ class AuthController extends Controller
 
     public function logout()
     {
-        echo 'Logut';
+        // logout from the application
+        session()->forget('user');
+        return redirect()->to('/login');
     }
 
     public function loginsubmit(Request $request)
@@ -65,6 +67,8 @@ class AuthController extends Controller
         ]);
 
         echo "Login com sucesso!!!\n";
-        dd($user->toArray());
+        echo "<pre>";
+        print_r($user->toArray());
+        echo "</pre>";
     }
 }
