@@ -66,9 +66,7 @@ class AuthController extends Controller
             ]
         ]);
 
-        echo "Login com sucesso!!!\n";
-        echo "<pre>";
-        print_r($user->toArray());
-        echo "</pre>";
+        return redirect('/');
+        // return redirect()->to('/');
     }
 }
